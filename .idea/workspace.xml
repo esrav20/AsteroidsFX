@@ -4,17 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa922a00-96d5-446c-bd81-d984402652b0" name="Changes" comment="initial project setup">
-      <change afterPath="$PROJECT_DIR$/Asteroid/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bullet/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Collision/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CommonBullet/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enemy/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Player/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="fa922a00-96d5-446c-bd81-d984402652b0" name="Changes" comment="modules created with their poms">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstControlSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstPlugin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/EntityProc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asteroid/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bullet/src/main/java/dk/sdu/cbse/pewpew/PewPew.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bullet/src/main/java/dk/sdu/cbse/pewpew/PewPewControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bullet/src/main/java/dk/sdu/cbse/pewpew/PewPewPlugin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bullet/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Collision/src/main/java/dk/sdu/cbse/collision/CollisionControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Collision/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Collision/src/test/java/dk/sdu/cbse/collision/CollisionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/Entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/GameControls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/VisualGameData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/World.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IEntityProcService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IGamePluginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IPostEntityProcService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommonBullet/src/main/java/dk/sdu/cbse/common/bullet/PewPew.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommonBullet/src/main/java/dk/sdu/cbse/common/bullet/PewPewSPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommonBullet/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enemy/src/main/java/dk/sdu/cbse/badguy/BadGuy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enemy/src/main/java/dk/sdu/cbse/badguy/BadGuyControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enemy/src/main/java/dk/sdu/cbse/badguy/BadGuyPlugin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enemy/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Player/src/main/java/dk/sdu/cbse/goodguy/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Player/src/main/java/dk/sdu/cbse/goodguy/EntityProc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Player/src/main/java/dk/sdu/cbse/goodguy/GoodGuyControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Player/src/main/java/dk/sdu/cbse/goodguy/GoodGuyPlugin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Player/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asteroid/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bullet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Bullet/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Collision/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonBullet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CommonBullet/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/Core-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Core/target/Core-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/classes/dk/sdu/cbse/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/target/classes/dk/sdu/cbse/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Player/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mods-mvn/Core-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/mods-mvn/Core-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,10 +60,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="module-info" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="LAB01" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,11 +96,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.CollisionTest.isCollision.executor": "Debug",
     "Maven.asteroids.jpms [clean].executor": "Run",
+    "Maven.asteroidsfx [clean,install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "LAB01",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Esrav20__SplitPackage",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Esben/Java Projekter/AsteroidsFX",
+    "last_opened_file_path": "C:/Users/esben/IdeaProjects/AsteroidsFX/Player",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -66,6 +116,50 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="dk.sdu.cbse.common.data" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\esben\IdeaProjects\AsteroidsFX\Player" />
+      <recent name="C:\Users\esben\IdeaProjects\AsteroidsFX\CommonBullet" />
+      <recent name="C:\Users\esben\IdeaProjects\AsteroidsFX\Enemy" />
+      <recent name="C:\Users\esben\IdeaProjects\AsteroidsFX\Asteroid" />
+      <recent name="C:\Users\esben\IdeaProjects\AsteroidsFX\Bullet" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\esben\IdeaProjects\AsteroidsFX\Collision\src\main\java\dk\sdu\cbse\collision" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="CollisionTest.isCollision" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Collision" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dk.sdu.cbse.collision.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dk.sdu.cbse.collision" />
+      <option name="MAIN_CLASS_NAME" value="dk.sdu.cbse.collision.CollisionTest" />
+      <option name="METHOD_NAME" value="isCollision" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CollisionTest.isCollision" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -87,7 +181,7 @@
       <workItem from="1742379691360" duration="16000" />
       <workItem from="1742379713744" duration="84000" />
       <workItem from="1742738427152" duration="189000" />
-      <workItem from="1747474584559" duration="459000" />
+      <workItem from="1747474584559" duration="9639000" />
     </task>
     <task id="LOCAL-00001" summary="initial project setup">
       <option name="closed" value="true" />
@@ -97,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742738510819</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="modules created with their poms">
+      <option name="closed" value="true" />
+      <created>1747475069067</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747475069067</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +207,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial project setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial project setup" />
+    <MESSAGE value="modules created with their poms" />
+    <option name="LAST_COMMIT_MESSAGE" value="modules created with their poms" />
   </component>
 </project>
