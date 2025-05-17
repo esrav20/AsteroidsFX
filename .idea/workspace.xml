@@ -4,57 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa922a00-96d5-446c-bd81-d984402652b0" name="Changes" comment="modules created with their poms">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstControlSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstPlugin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/EntityProc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asteroid/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bullet/src/main/java/dk/sdu/cbse/pewpew/PewPew.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bullet/src/main/java/dk/sdu/cbse/pewpew/PewPewControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bullet/src/main/java/dk/sdu/cbse/pewpew/PewPewPlugin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bullet/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Collision/src/main/java/dk/sdu/cbse/collision/CollisionControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Collision/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Collision/src/test/java/dk/sdu/cbse/collision/CollisionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/GameControls.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/VisualGameData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/World.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IEntityProcService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IGamePluginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IPostEntityProcService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Common/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CommonBullet/src/main/java/dk/sdu/cbse/common/bullet/PewPew.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CommonBullet/src/main/java/dk/sdu/cbse/common/bullet/PewPewSPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CommonBullet/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enemy/src/main/java/dk/sdu/cbse/badguy/BadGuy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enemy/src/main/java/dk/sdu/cbse/badguy/BadGuyControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enemy/src/main/java/dk/sdu/cbse/badguy/BadGuyPlugin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enemy/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Player/src/main/java/dk/sdu/cbse/goodguy/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Player/src/main/java/dk/sdu/cbse/goodguy/EntityProc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Player/src/main/java/dk/sdu/cbse/goodguy/GoodGuyControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Player/src/main/java/dk/sdu/cbse/goodguy/GoodGuyPlugin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Player/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Asteroid/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bullet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Bullet/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Collision/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Collision/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonBullet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CommonBullet/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/target/Core-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Core/target/Core-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/target/classes/dk/sdu/cbse/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/target/classes/dk/sdu/cbse/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enemy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Player/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mods-mvn/Core-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/mods-mvn/Core-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fa922a00-96d5-446c-bd81-d984402652b0" name="Changes" comment="All relevant Modules, poms, packages are created. &#10;&#10;Dependencies via JPMS work as intended - mvn clean install command builds the project correctly without failures." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,7 +131,7 @@
       <workItem from="1742379691360" duration="16000" />
       <workItem from="1742379713744" duration="84000" />
       <workItem from="1742738427152" duration="189000" />
-      <workItem from="1747474584559" duration="9639000" />
+      <workItem from="1747474584559" duration="10359000" />
     </task>
     <task id="LOCAL-00001" summary="initial project setup">
       <option name="closed" value="true" />
@@ -199,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747475069067</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="All relevant Modules, poms, packages are created. &#10;&#10;Dependencies via JPMS work as intended - mvn clean install command builds the project correctly without failures.">
+      <option name="closed" value="true" />
+      <created>1747486845956</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747486845956</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +166,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial project setup" />
     <MESSAGE value="modules created with their poms" />
-    <option name="LAST_COMMIT_MESSAGE" value="modules created with their poms" />
+    <MESSAGE value="All relevant Modules, poms, packages are created. &#10;&#10;Dependencies via JPMS work as intended - mvn clean install command builds the project correctly without failures." />
+    <option name="LAST_COMMIT_MESSAGE" value="All relevant Modules, poms, packages are created. &#10;&#10;Dependencies via JPMS work as intended - mvn clean install command builds the project correctly without failures." />
   </component>
 </project>
