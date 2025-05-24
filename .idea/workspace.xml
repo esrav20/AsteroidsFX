@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa922a00-96d5-446c-bd81-d984402652b0" name="Changes" comment="All relevant Modules, poms, packages are created. &#10;&#10;Dependencies via JPMS work as intended - mvn clean install command builds the project correctly without failures." />
+    <list default="true" id="fa922a00-96d5-446c-bd81-d984402652b0" name="Changes" comment="All relevant Modules, poms, packages are created. &#10;&#10;Dependencies via JPMS work as intended - mvn clean install command builds the project correctly without failures.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstControlSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstControlSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IEntityProcService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IEntityProcService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IGamePluginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IGamePluginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IPostEntityProcService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IPostEntityProcService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,6 +139,8 @@
       <workItem from="1742738427152" duration="189000" />
       <workItem from="1747474584559" duration="10394000" />
       <workItem from="1747762694154" duration="1000" />
+      <workItem from="1747921520214" duration="41000" />
+      <workItem from="1748071721129" duration="3014000" />
     </task>
     <task id="LOCAL-00001" summary="initial project setup">
       <option name="closed" value="true" />
@@ -166,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747488134611</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="All relevant Modules, poms, packages are created. &#10;&#10;Dependencies via JPMS work as intended - mvn clean install command builds the project correctly without failures.">
+      <option name="closed" value="true" />
+      <created>1747921552043</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747921552043</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

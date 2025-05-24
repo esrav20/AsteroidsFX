@@ -37,11 +37,7 @@ public class AstControlSystem implements IEntityProcService {
                 createSmallSpaceRock(spaceRock, world, -90);
                 createSmallSpaceRock(spaceRock, world, 90);
                 world.removeEntity(spaceRock);
-
-
-
             }
-
 
         }
 
