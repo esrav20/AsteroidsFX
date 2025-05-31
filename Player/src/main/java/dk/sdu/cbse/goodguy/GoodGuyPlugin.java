@@ -13,24 +13,22 @@ public class GoodGuyPlugin implements IGamePluginService {
 
     @Override
     public void start(VisualGameData vgData, World world) {
-
         goodguy = createGoodGuy(vgData);
         world.addEntity(goodguy);
-
     }
+
     private Entity createGoodGuy(VisualGameData vgData) {
-        Entity goodguyV = new Entity();
+        Entity goodguyV = new GoodGuy(); // Fixed: was creating generic Entity
         goodguyV.setPolygonCoordinates(-5, -5, 10, 0, -5, 5);
-        goodguyV.setX(vgData.getDisplayH()/2);
+        goodguyV.setX(vgData.getDisplayW()/2);
         goodguyV.setY(vgData.getDisplayH()/2);
-        //goodguyV.setHitPoints(5);
-        //goodguyV.setDmg(10);
+        goodguyV.setRotation(0); // Start facing right
+        goodguyV.add(new dk.sdu.cbse.common.data.Parts.LifePart(5, 1)); // Add life component
         return goodguyV;
     }
 
     @Override
     public void stop(VisualGameData VGdata, World world) {
         world.removeEntity(goodguy);
-
     }
 }

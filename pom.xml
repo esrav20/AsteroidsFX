@@ -3,28 +3,28 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>dk.sdu.cbse</groupId>
-    <artifactId>asteroidsfx</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+  <artifactId>asteroidsfx</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
   <name>AsteroidsFX</name>
-  <repositories>
-  </repositories>
 
   <modules>
-    <module>Core</module>
     <module>Common</module>
-    <module>Player</module>
-    <module>Bullet</module>
     <module>CommonBullet</module>
-    <module>Enemy</module>
     <module>Asteroid</module>
+    <module>Player</module>
+    <module>Enemy</module>
+    <module>Bullet</module>
     <module>Collision</module>
+    <module>Core</module>
   </modules>
+
   <properties>
     <java>java</java>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <javafx.version>21.0.5</javafx.version>
   </properties>
 
   <dependencyManagement>
@@ -32,10 +32,21 @@
       <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-controls</artifactId>
-        <version>21.0.2</version>
+        <version>${javafx.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-graphics</artifactId>
+        <version>${javafx.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-base</artifactId>
+        <version>${javafx.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
+
   <build>
     <plugins>
       <plugin>
@@ -49,41 +60,23 @@
           <fork>true</fork>
         </configuration>
       </plugin>
-      <!-- execute the resulting project -->
+      <!-- Exec plugin only for parent - not inherited by children -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
-        <version>1.6.0</version>
+        <version>3.0.0</version>
         <inherited>false</inherited>
-        <executions>
-          <execution>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-          </execution>
-        </executions>
         <configuration>
-          <executable>${java}</executable>
+          <skip>false</skip>
+          <executable>java</executable>
           <workingDirectory>.</workingDirectory>
-          <longModulepath>false</longModulepath>
           <arguments>
-            <!--
-                                    On Mac Devices this line should not be commented out
-                                    <argument>-XstartOnFirstThread</argument>
-            -->
-            <argument>-Dorg.lwjgl.util.Debug=true</argument>
-            <argument>-Djava.library.path=libs</argument>
-            <argument>--module-path=mods-mvn</argument>
-            <argument>--class-path=libs/*</argument>
-            <!-- because spark.core is an automatic module and actually required,
-            monitor.observer.zero would be resolved as well and does not need
-            to be added explicitly;
-            I still wanted to do it for clarity, but for some reason that results
-            in "java.lang.module.FindException: Module monitor.observer.zero not found";
-            strange... -->
-            <!--                        <argument>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=127.0.0.1:8000</argument>                        &ndash;&gt;-->
-            <argument>--module=Core/dk.sdu.cbse.App.main</argument>
-            <argument>--add-modules javafx.graphics</argument>
+            <argument>--module-path</argument>
+            <argument>mods-mvn</argument>
+            <argument>--add-modules</argument>
+            <argument>Core,Common,CommonBullet,Asteroid,Player,Enemy,Bullet,Collision</argument>
+            <argument>--module</argument>
+            <argument>Core/dk.sdu.cbse.App</argument>
           </arguments>
         </configuration>
       </plugin>

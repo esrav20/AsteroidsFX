@@ -1,6 +1,5 @@
 package dk.sdu.cbse;
 
-import com.sun.tools.javac.Main;
 import dk.sdu.cbse.common.data.Entity;
 import dk.sdu.cbse.common.data.GameControls;
 import dk.sdu.cbse.common.data.VisualGameData;
@@ -8,6 +7,7 @@ import dk.sdu.cbse.common.data.World;
 import dk.sdu.cbse.common.services.IEntityProcService;
 import dk.sdu.cbse.common.services.IGamePluginService;
 import dk.sdu.cbse.common.services.IPostEntityProcService;
+import dk.sdu.cbse.asteroid.Asteroid;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -24,22 +24,29 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import static java.util.stream.Collectors.toList;
 
-class App extends Application {
+public class App extends Application {
     private final VisualGameData vgData = new VisualGameData();
     private final World world = new World();
     private final Map<Entity, Polygon> polygons = new ConcurrentHashMap<>();
     private final Pane gameWindow = new Pane();
+    private Text scoreText;
+    private int destroyedAsteroids = 0;
+    private int previousAsteroidCount = 0;
 
+    // Public no-argument constructor (required for JavaFX Application)
+    public App() {
+        super();
+    }
 
     public static void main(String[] args) {
-        launch(App.class);
+        launch(App.class, args);
     }
-    
+
     @Override
     public void start(Stage window) throws Exception {
-        Text text = new Text(10, 20, "Destroyed asteroids: 0");
+        scoreText = new Text(10, 20, "Destroyed asteroids: 0");
         gameWindow.setPrefSize(vgData.getDisplayW(), vgData.getDisplayH());
-        gameWindow.getChildren().add(text);
+        gameWindow.getChildren().add(scoreText);
 
         Scene scene = new Scene(gameWindow);
         scene.setOnKeyPressed(event -> {
@@ -69,19 +76,17 @@ class App extends Application {
             if (event.getCode().equals(KeyCode.SPACE)) {
                 vgData.getControls().setControl(GameControls.SPACE, false);
             }
-
-            if (event.getCode().equals(KeyCode.SPACE)) {
-                vgData.getControls().setControl(GameControls.SPACE, false);
-            }
-
         });
 
         // Lookup all Game Plugins using ServiceLoader
         for (IGamePluginService iGamePlugin : getPluginServices()) {
             iGamePlugin.start(vgData, world);
         }
-        for (Entity entity : world.getEntities()) {
 
+        // Track initial asteroid count
+        previousAsteroidCount = world.getEntities(Asteroid.class).size();
+
+        for (Entity entity : world.getEntities()) {
             Polygon polygon = new Polygon(entity.getPolygonCoordinates());
             polygons.put(entity, polygon);
             gameWindow.getChildren().add(polygon);
@@ -92,7 +97,6 @@ class App extends Application {
         window.setScene(scene);
         window.setTitle("ASTEROIDS");
         window.show();
-
     }
 
     private void render() {
@@ -105,11 +109,12 @@ class App extends Application {
                 draw();
                 vgData.getControls().update();
             }
-
         }.start();
     }
 
     private void update() {
+        // Track asteroid count before processing
+        int asteroidsBefore = world.getEntities(Asteroid.class).size();
 
         // Update
         for (IEntityProcService entityProcessorService : getEntityProcessingServices()) {
@@ -127,18 +132,23 @@ class App extends Application {
             postEntityProcessorService.process(vgData, world);
         }
 
+        // Track asteroid count after processing
+        int asteroidsAfter = world.getEntities(Asteroid.class).size();
+
+        // If asteroids decreased, some were destroyed
+        if (asteroidsBefore > asteroidsAfter) {
+            destroyedAsteroids += (asteroidsBefore - asteroidsAfter);
+            scoreText.setText("Destroyed asteroids: " + destroyedAsteroids);
+        }
     }
 
     private void draw() {
-
         for (Entity entityInPolygons : polygons.keySet()) {
             if(!world.getEntities().contains(entityInPolygons)){
                 gameWindow.getChildren().remove(polygons.get(entityInPolygons));
                 polygons.remove(entityInPolygons);
             }
         }
-
-
 
         for (Entity entity : world.getEntities()) {
             Polygon polygon = polygons.get(entity);
@@ -151,7 +161,6 @@ class App extends Application {
             polygon.setTranslateY(entity.getY());
             polygon.setRotate(entity.getRotation());
         }
-
     }
 
     private Collection<? extends IGamePluginService> getPluginServices() {

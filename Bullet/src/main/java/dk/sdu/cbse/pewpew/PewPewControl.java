@@ -11,40 +11,45 @@ public class PewPewControl implements IEntityProcService {
     public void process(VisualGameData vgData, World world) {
 
         for (Entity pewpew : world.getEntities(PewPew.class)) {
+            // Move bullets faster
             double shiftX = Math.cos(Math.toRadians(pewpew.getRotation()));
             double shiftY = Math.sin(Math.toRadians(pewpew.getRotation()));
-            pewpew.setX(pewpew.getX() + shiftX * 3);
-            pewpew.setY(pewpew.getY() + shiftY * 3);
+            pewpew.setX(pewpew.getX() + shiftX * 8); // Fast bullet speed
+            pewpew.setY(pewpew.getY() + shiftY * 8);
 
-            if (pewpew.getX() < 0) {
+            // Remove bullets when they go off screen (with margin)
+            if (pewpew.getX() < -20 || pewpew.getX() > vgData.getDisplayW() + 20 ||
+                    pewpew.getY() < -20 || pewpew.getY() > vgData.getDisplayH() + 20) {
                 world.removeEntity(pewpew);
+                continue; // Skip further processing for removed bullet
             }
-            if (pewpew.getY() < 0) {
-                world.removeEntity(pewpew);
-            }
-            if (pewpew.getX() > vgData.getDisplayW()) {
-                world.removeEntity(pewpew);
-            }
-            if (pewpew.getY() > vgData.getDisplayH()) {
-                world.removeEntity(pewpew);
+
+            // Also remove bullets after some time (automatic cleanup)
+            LifePart lifePart = pewpew.getPart(LifePart.class);
+            if (lifePart != null) {
+                lifePart.process(vgData, pewpew);
+                if (lifePart.getLife() <= 0) {
+                    world.removeEntity(pewpew);
+                }
             }
         }
-
-
     }
 
+    // This method is called by PewPewPlugin.createPewPew()
     public Entity createPewPew(Entity shooter, VisualGameData vgData) {
         Entity pewpew = new PewPew();
-        pewpew.setPolygonCoordinates(1, -1, 1, 1, -1, 1, -1, -1);
+        pewpew.setPolygonCoordinates(3, -1, 3, 1, -3, 1, -3, -1); // Small rectangular bullet
         pewpew.setX(shooter.getX());
         pewpew.setY(shooter.getY());
-        pewpew.add(new LifePart(1, 1));
+        pewpew.add(new LifePart(90, 1)); // Bullet lives for 1.5 seconds at 60fps
         pewpew.setRotation(shooter.getRotation());
+
+        // Spawn bullet slightly ahead of shooter to avoid immediate collision
         double shiftX = Math.cos(Math.toRadians(shooter.getRotation()));
         double shiftY = Math.sin(Math.toRadians(shooter.getRotation()));
-        pewpew.setX(pewpew.getX() + shiftX * 10);
-        pewpew.setY(pewpew.getY() + shiftY * 10);
+        pewpew.setX(pewpew.getX() + shiftX * 15);
+        pewpew.setY(pewpew.getY() + shiftY * 15);
+
         return pewpew;
     }
-
 }

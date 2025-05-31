@@ -4,6 +4,7 @@ import dk.sdu.cbse.common.services.IEntityProcService;
 import dk.sdu.cbse.common.services.IGamePluginService;
 
 module Player {
+    exports dk.sdu.cbse.goodguy;
     requires Common;
     requires CommonBullet;
     uses dk.sdu.cbse.common.bullet.PewPewSPI;

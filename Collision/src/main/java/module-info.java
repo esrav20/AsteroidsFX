@@ -5,5 +5,8 @@ module Collision {
     requires Common;
     requires CommonBullet;
     requires Asteroid;
+    requires Bullet;
+    requires Player;
+    requires Enemy;
     provides IPostEntityProcService with dk.sdu.cbse.collision.CollisionControl;
 }

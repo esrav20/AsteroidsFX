@@ -4,6 +4,7 @@ import dk.sdu.cbse.common.services.IEntityProcService;
 import dk.sdu.cbse.common.services.IGamePluginService;
 
 module Asteroid {
+    exports dk.sdu.cbse.asteroid;
     requires Common;
     provides IGamePluginService with AstPlugin;
     provides IEntityProcService with AstControlSystem;
