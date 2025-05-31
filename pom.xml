@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>dk.sdu.cbse</groupId>
-  <artifactId>asteroidsfx</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <artifactId>asteroidsfx</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
   <name>AsteroidsFX</name>
   <repositories>
   </repositories>
@@ -23,8 +23,8 @@
   <properties>
     <java>java</java>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencyManagement>
@@ -82,7 +82,7 @@
             in "java.lang.module.FindException: Module monitor.observer.zero not found";
             strange... -->
             <!--                        <argument>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=127.0.0.1:8000</argument>                        &ndash;&gt;-->
-            <argument>--module=Core/dk.sdu.mmmi.cbse.main.Main</argument>
+            <argument>--module=Core/dk.sdu.cbse.App.main</argument>
             <argument>--add-modules javafx.graphics</argument>
           </arguments>
         </configuration>
