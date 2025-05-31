@@ -5,28 +5,91 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa922a00-96d5-446c-bd81-d984402652b0" name="Changes" comment="initial Spring commit">
-      <change afterPath="$PROJECT_DIR$/Core/src/main/java/dk/sdu/cbse/AsteroidsFxApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Asteroid/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Asteroid/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bullet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Bullet/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bullet/src/main/java/dk/sdu/cbse/pewpew/PewPewPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bullet/src/main/java/dk/sdu/cbse/pewpew/PewPewPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bullet/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Collision/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Collision/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Collision/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstControlSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstControlSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asteroid/target/Asteroid-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asteroid/target/classes/dk/sdu/cbse/asteroid/AstControlSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/target/classes/dk/sdu/cbse/asteroid/AstControlSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asteroid/target/classes/dk/sdu/cbse/asteroid/AstPlugin.class" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/target/classes/dk/sdu/cbse/asteroid/AstPlugin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asteroid/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asteroid/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asteroid/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asteroid/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bullet/src/main/java/dk/sdu/cbse/pewpew/PewPewControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bullet/src/main/java/dk/sdu/cbse/pewpew/PewPewControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bullet/target/Bullet-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bullet/target/classes/dk/sdu/cbse/pewpew/PewPewControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Bullet/target/classes/dk/sdu/cbse/pewpew/PewPewControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bullet/target/classes/dk/sdu/cbse/pewpew/PewPewPlugin.class" beforeDir="false" afterPath="$PROJECT_DIR$/Bullet/target/classes/dk/sdu/cbse/pewpew/PewPewPlugin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bullet/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bullet/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bullet/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Bullet/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bullet/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Bullet/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/src/main/java/dk/sdu/cbse/collision/CollisionControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Collision/src/main/java/dk/sdu/cbse/collision/CollisionControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/src/test/java/dk/sdu/cbse/collision/CollisionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Collision/src/test/java/dk/sdu/cbse/collision/CollisionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/target/Collision-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/target/classes/dk/sdu/cbse/collision/CollisionControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Collision/target/classes/dk/sdu/cbse/collision/CollisionControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Collision/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Collision/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/target/surefire-reports/TEST-dk.sdu.cbse.collision.CollisionTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/target/surefire-reports/dk.sdu.cbse.collision.CollisionTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/target/test-classes/META-INF/jpms.args" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/target/test-classes/dk/sdu/cbse/collision/CollisionTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonBullet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CommonBullet/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IEntityProcService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IEntityProcService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IGamePluginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IGamePluginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IPostEntityProcService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/services/IPostEntityProcService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/target/Common-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/data/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/data/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/data/GameControls.class" beforeDir="false" afterPath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/data/GameControls.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/data/Parts/EntityPart.class" beforeDir="false" afterPath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/data/Parts/EntityPart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/data/Parts/LifePart.class" beforeDir="false" afterPath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/data/Parts/LifePart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/data/VisualGameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/data/VisualGameData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/data/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/data/World.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/services/IEntityProcService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/services/IEntityProcService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/services/IGamePluginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/services/IGamePluginService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/services/IPostEntityProcService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Common/target/classes/dk/sdu/cbse/common/services/IPostEntityProcService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonBullet/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonBullet/target/CommonBullet-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonBullet/target/classes/dk/sdu/cbse/common/bullet/PewPewSPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/CommonBullet/target/classes/dk/sdu/cbse/common/bullet/PewPewSPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonBullet/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonBullet/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonBullet/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/CommonBullet/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonBullet/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/CommonBullet/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/src/main/java/dk/sdu/cbse/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/dk/sdu/cbse/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enemy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enemy/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Player/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player/src/main/java/dk/sdu/cbse/goodguy/GoodGuyControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Player/src/main/java/dk/sdu/cbse/goodguy/GoodGuyControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/src/main/java/dk/sdu/cbse/AsteroidsFxApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/dk/sdu/cbse/AsteroidsFxApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/Core-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/classes/dk/sdu/cbse/App$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/target/classes/dk/sdu/cbse/App$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/classes/dk/sdu/cbse/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/target/classes/dk/sdu/cbse/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemy/src/main/java/dk/sdu/cbse/badguy/BadGuyControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/src/main/java/dk/sdu/cbse/badguy/BadGuyControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemy/src/main/java/dk/sdu/cbse/badguy/BadGuyPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/src/main/java/dk/sdu/cbse/badguy/BadGuyPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemy/target/Enemy-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemy/target/classes/dk/sdu/cbse/badguy/BadGuyControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/target/classes/dk/sdu/cbse/badguy/BadGuyControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemy/target/classes/dk/sdu/cbse/badguy/BadGuyPlugin.class" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/target/classes/dk/sdu/cbse/badguy/BadGuyPlugin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemy/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemy/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemy/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemy/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/src/main/java/dk/sdu/cbse/goodguy/GoodGuyPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Player/src/main/java/dk/sdu/cbse/goodguy/GoodGuyPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/target/Player-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/target/classes/dk/sdu/cbse/goodguy/EntityProc.class" beforeDir="false" afterPath="$PROJECT_DIR$/Player/target/classes/dk/sdu/cbse/goodguy/EntityProc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/target/classes/dk/sdu/cbse/goodguy/GoodGuyControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Player/target/classes/dk/sdu/cbse/goodguy/GoodGuyControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/target/classes/dk/sdu/cbse/goodguy/GoodGuyPlugin.class" beforeDir="false" afterPath="$PROJECT_DIR$/Player/target/classes/dk/sdu/cbse/goodguy/GoodGuyPlugin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Player/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Player/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,10 +158,13 @@
     "Maven.Core [javafx:run].executor": "Run",
     "Maven.asteroids.jpms [clean].executor": "Run",
     "Maven.asteroidsfx [-e,exec:exec].executor": "Run",
+    "Maven.asteroidsfx [clean,compile].executor": "Run",
     "Maven.asteroidsfx [clean,install,-T,8].executor": "Run",
     "Maven.asteroidsfx [clean,install,-X].executor": "Run",
     "Maven.asteroidsfx [clean,install].executor": "Run",
     "Maven.asteroidsfx [clean].executor": "Run",
+    "Maven.asteroidsfx [compile].executor": "Run",
+    "Maven.asteroidsfx [dependency:tree,|,grep...].executor": "Run",
     "Maven.asteroidsfx [exec:exec].executor": "Run",
     "Maven.asteroidsfx [exec:java].executor": "Run",
     "Maven.asteroidsfx [install].executor": "Run",
@@ -106,6 +172,8 @@
     "Maven.asteroidsfx [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
     "Maven.asteroidsfx [org.apache.maven.plugins:maven-install-plugin:3.1.2:help].executor": "Run",
     "Maven.asteroidsfx [org.apache.maven.plugins:maven-install-plugin:3.1.2:install].executor": "Run",
+    "Maven.asteroidsfx [spring-boot:run,-pl,Core].executor": "Run",
+    "Maven.asteroidsfx [spring-boot:run].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -142,13 +210,18 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean install -X" />
-      <command value="mvn clean" />
       <command value="mvn javafx:run" />
       <command value="mvn exec:java" />
       <command value="mvn -e exec:exec" />
       <command value="mvn clean install" />
       <command value="mvn clean install -T 8" />
       <command value="mvn exec:exec" />
+      <command value="mvn clean" />
+      <command value="mvn compile" />
+      <command value="mvn spring-boot:run" />
+      <command value="mvn clean compile" />
+      <command value="mvn spring-boot:run -pl Core" />
+      <command value="mvn dependency:tree | grep spring" />
     </option>
   </component>
   <component name="RunManager" selected="Application.App">
@@ -223,7 +296,7 @@
       <workItem from="1747921520214" duration="41000" />
       <workItem from="1748071721129" duration="3014000" />
       <workItem from="1748680992816" duration="7526000" />
-      <workItem from="1748718866861" duration="1934000" />
+      <workItem from="1748718866861" duration="4175000" />
     </task>
     <task id="LOCAL-00001" summary="initial project setup">
       <option name="closed" value="true" />
@@ -313,7 +386,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748719902564</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="initial Spring commit">
+      <option name="closed" value="true" />
+      <created>1748720817984</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1748720817984</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

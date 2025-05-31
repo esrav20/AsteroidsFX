@@ -7,17 +7,19 @@ import dk.sdu.cbse.common.data.Entity;
 import dk.sdu.cbse.common.data.Parts.LifePart;
 import dk.sdu.cbse.common.bullet.PewPewSPI;
 import dk.sdu.cbse.goodguy.GoodGuy;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.Collection;
 import java.util.Random;
-import java.util.ServiceLoader;
 
-import static java.util.stream.Collectors.toList;
-
+@Service
 public class BadGuyControl implements IEntityProcService {
     private static int shootCooldown = 0;
     private static int respawnCooldown = 0;
     private static Random random = new Random();
+
+    @Autowired
+    private PewPewSPI pewPewSPI; // Spring dependency injection instead of ServiceLoader
 
     @Override
     public void process(VisualGameData vgData, World world) {
@@ -34,7 +36,7 @@ public class BadGuyControl implements IEntityProcService {
 
         // Process existing enemies
         for (Entity badGuy : world.getEntities(BadGuy.class)) {
-            // Process enemy life first (like Oliver's pattern)
+            // Process enemy life first
             LifePart lifePart = badGuy.getPart(LifePart.class);
             if (lifePart != null) {
                 // Check if enemy should be destroyed
@@ -81,12 +83,10 @@ public class BadGuyControl implements IEntityProcService {
             badGuy.setX(badGuy.getX() + shiftX * 1.5);
             badGuy.setY(badGuy.getY() + shiftY * 1.5);
 
-            // Shoot at player occasionally
+            // Shoot at player occasionally using injected service
             if (player != null && shootCooldown <= 0 && random.nextInt(120) == 0) {
-                getPewPewSPI().stream().findFirst().ifPresent(pewSPI -> {
-                    Entity bullet = pewSPI.createPewPew(badGuy, vgData);
-                    world.addEntity(bullet);
-                });
+                Entity bullet = pewPewSPI.createPewPew(badGuy, vgData);
+                world.addEntity(bullet);
                 shootCooldown = 60; // 1 second cooldown
             }
 
@@ -146,9 +146,5 @@ public class BadGuyControl implements IEntityProcService {
 
         newEnemy.add(new LifePart(3, 1)); // 3 hit points
         world.addEntity(newEnemy);
-    }
-
-    private Collection<? extends PewPewSPI> getPewPewSPI() {
-        return ServiceLoader.load(PewPewSPI.class).stream().map(ServiceLoader.Provider::get).collect(toList());
     }
 }

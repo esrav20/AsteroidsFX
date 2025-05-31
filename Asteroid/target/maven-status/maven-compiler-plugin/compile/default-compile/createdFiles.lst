@@ -1,4 +1,3 @@
-module-info.class
 dk\sdu\cbse\asteroid\AstControlSystem.class
 dk\sdu\cbse\asteroid\AstPlugin.class
 dk\sdu\cbse\asteroid\Asteroid.class

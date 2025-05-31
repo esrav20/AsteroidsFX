@@ -4,7 +4,9 @@ import dk.sdu.cbse.common.data.Entity;
 import dk.sdu.cbse.common.data.VisualGameData;
 import dk.sdu.cbse.common.data.World;
 import dk.sdu.cbse.common.services.IGamePluginService;
+import org.springframework.stereotype.Component;
 
+@Component
 public class GoodGuyPlugin implements IGamePluginService {
 
     private Entity goodguy;

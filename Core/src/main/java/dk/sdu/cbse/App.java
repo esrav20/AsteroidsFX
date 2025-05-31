@@ -17,11 +17,13 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Component
 public class App extends Application {
     private final VisualGameData vgData = new VisualGameData();
     private final World world = new World();
@@ -30,18 +32,24 @@ public class App extends Application {
     private Text scoreText;
     private int destroyedAsteroids = 0;
 
-    // Spring services
+    // Spring will automatically inject all implementations
     private Collection<IGamePluginService> gamePlugins;
     private Collection<IEntityProcService> entityServices;
     private Collection<IPostEntityProcService> postEntityServices;
 
     @Override
     public void start(Stage window) throws Exception {
-        // Get Spring context and load services
+        // Get Spring context and load all services automatically
         ConfigurableApplicationContext context = AsteroidsFxApplication.getSpringContext();
+
+        // Spring automatically finds all beans implementing these interfaces
         gamePlugins = context.getBeansOfType(IGamePluginService.class).values();
         entityServices = context.getBeansOfType(IEntityProcService.class).values();
         postEntityServices = context.getBeansOfType(IPostEntityProcService.class).values();
+
+        System.out.println("Found " + gamePlugins.size() + " game plugins");
+        System.out.println("Found " + entityServices.size() + " entity services");
+        System.out.println("Found " + postEntityServices.size() + " post entity services");
 
         scoreText = new Text(10, 20, "Destroyed asteroids: 0");
         gameWindow.setPrefSize(vgData.getDisplayW(), vgData.getDisplayH());
@@ -50,8 +58,9 @@ public class App extends Application {
         Scene scene = new Scene(gameWindow);
         setupKeyHandlers(scene);
 
-        // Start all game plugins
+        // Start all game plugins discovered by Spring
         for (IGamePluginService gamePlugin : gamePlugins) {
+            System.out.println("Starting plugin: " + gamePlugin.getClass().getSimpleName());
             gamePlugin.start(vgData, world);
         }
 
@@ -63,7 +72,7 @@ public class App extends Application {
         render();
 
         window.setScene(scene);
-        window.setTitle("ASTEROIDS - Spring Framework");
+        window.setTitle("ASTEROIDS - Pure Spring Framework");
         window.show();
     }
 
@@ -132,7 +141,7 @@ public class App extends Application {
             createPolygonForEntity(entity);
         }
 
-        // Post-processing (like collision detection)
+        // Post-processing (like collision detection) using Spring-managed services
         for (IPostEntityProcService postEntityService : postEntityServices) {
             postEntityService.process(vgData, world);
         }

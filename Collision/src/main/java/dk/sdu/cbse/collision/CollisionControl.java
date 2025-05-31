@@ -5,9 +5,11 @@ import dk.sdu.cbse.common.data.Parts.LifePart;
 import dk.sdu.cbse.common.data.VisualGameData;
 import dk.sdu.cbse.common.data.World;
 import dk.sdu.cbse.common.services.IPostEntityProcService;
+import org.springframework.stereotype.Service;
 
 import static java.lang.Math.sqrt;
 
+@Service
 public class CollisionControl implements IPostEntityProcService {
 
     @Override
