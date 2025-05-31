@@ -17,7 +17,7 @@ public class AstControlSystem implements IEntityProcService {
             // Move asteroids slower
             double changeX = Math.cos(Math.toRadians(asteroid.getRotation()));
             double changeY = Math.sin(Math.toRadians(asteroid.getRotation()));
-            asteroid.setX(asteroid.getX() + changeX * 1.0); // Slower movement
+            asteroid.setX(asteroid.getX() + changeX * 1.0);
             asteroid.setY(asteroid.getY() + changeY * 1.0);
 
             // Wrap asteroids around screen edges
@@ -36,30 +36,40 @@ public class AstControlSystem implements IEntityProcService {
 
             LifePart lifePart = (LifePart) asteroid.getPart(LifePart.class);
             if (lifePart != null) {
+                // Process damage first
                 lifePart.process(vgData, asteroid);
 
-                // Large asteroid breaks into medium asteroids
-                if (lifePart.getLife() == 7) {
+                // Check what type of asteroid this is based on its polygon coordinates
+                int currentLife = lifePart.getLife();
+
+                // Determine asteroid type by polygon size
+                double[] coords = asteroid.getPolygonCoordinates();
+                boolean isLargeAsteroid = coords[0] == 30;
+                boolean isMediumAsteroid = coords[0] == 20;
+                boolean isSmallAsteroid = coords[0] == 10;
+
+                // Large asteroid splits when destroyed
+                if (isLargeAsteroid && currentLife <= 0) {
                     createMediumAsteroid(asteroid, world, -45);
                     createMediumAsteroid(asteroid, world, 45);
                     world.removeEntity(asteroid);
                 }
-                // Medium asteroid breaks into small asteroids
-                else if (lifePart.getLife() == 3) {
+                // Medium asteroid splits when destroyed
+                else if (isMediumAsteroid && currentLife <= 0) {
                     createSmallAsteroid(asteroid, world, -60);
                     createSmallAsteroid(asteroid, world, 60);
                     world.removeEntity(asteroid);
                 }
                 // Small asteroid just disappears
-                else if (lifePart.getLife() <= 0) {
+                else if (isSmallAsteroid && currentLife <= 0) {
                     world.removeEntity(asteroid);
                 }
             }
         }
 
-        // Spawn new asteroids occasionally (much less frequent)
+        // Spawn new asteroids occasionally
         Random random = new Random();
-        int randomInt = random.nextInt(600); // About once every 10 seconds
+        int randomInt = random.nextInt(600);
 
         if (randomInt == 1) {
             createAsteroid(vgData, world);
@@ -93,8 +103,8 @@ public class AstControlSystem implements IEntityProcService {
                 break;
         }
 
-        asteroid1.setRotation(random.nextInt(360)); // Random direction
-        asteroid1.add(new LifePart(10, 1));
+        asteroid1.setRotation(random.nextInt(360));
+        asteroid1.add(new LifePart(3, 1)); // Large asteroids have 3 HP
 
         world.addEntity(asteroid1);
     }
@@ -105,7 +115,7 @@ public class AstControlSystem implements IEntityProcService {
         asteroid1.setX(asteroid.getX());
         asteroid1.setY(asteroid.getY());
         asteroid1.setRotation(asteroid.getRotation() + rotationOffset);
-        asteroid1.add(new LifePart(6, 1));
+        asteroid1.add(new LifePart(2, 1)); // Medium asteroids have 2 HP
 
         world.addEntity(asteroid1);
     }
@@ -116,7 +126,8 @@ public class AstControlSystem implements IEntityProcService {
         asteroid1.setX(asteroid.getX());
         asteroid1.setY(asteroid.getY());
         asteroid1.setRotation(asteroid.getRotation() + rotationOffset);
-        asteroid1.add(new LifePart(2, 1));
+        asteroid1.add(new LifePart(1, 1)); // Small asteroids have 1 HP
+
         world.addEntity(asteroid1);
     }
 }

@@ -39,7 +39,7 @@ public class GoodGuyControl implements IEntityProcService {
                 goodguy.setY(goodguy.getY() + shiftY * 3);
             }
 
-            // Shooting - back to original working method
+            // Shooting
             if (vgData.getControls().isDown(GameControls.SPACE) && shootCooldown <= 0) {
                 getPewPewSPI().stream().findFirst().ifPresent(pewSPI -> {
                     Entity bullet = pewSPI.createPewPew(goodguy, vgData);

@@ -24,7 +24,7 @@ public class AstPlugin implements IGamePluginService {
         asteroid1.setX(vgData.getDisplayW()/2);
         asteroid1.setY(0);
         asteroid1.setRotation(90);
-        asteroid1.add(new LifePart(10, 10));
+        asteroid1.add(new LifePart(2, 1)); // Medium asteroid with 2 HP
 
         return asteroid1;
     }

@@ -1,6 +1,5 @@
 package dk.sdu.cbse.collision;
 
-
 import dk.sdu.cbse.common.data.Entity;
 import dk.sdu.cbse.common.data.Parts.LifePart;
 import dk.sdu.cbse.common.data.VisualGameData;
@@ -9,7 +8,7 @@ import dk.sdu.cbse.common.services.IPostEntityProcService;
 import dk.sdu.cbse.asteroid.Asteroid;
 import dk.sdu.cbse.badguy.BadGuy;
 import dk.sdu.cbse.goodguy.GoodGuy;
-import dk.sdu.cbse.pewpew.PewPew;
+import dk.sdu.cbse.common.bullet.PewPew;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,12 +36,7 @@ public class CollisionControl implements IPostEntityProcService {
 
                     LifePart asteroidLife = asteroid.getPart(LifePart.class);
                     if (asteroidLife != null) {
-                        int currentLife = asteroidLife.getLife();
-                        asteroidLife.setLife(currentLife - 1);
-
-                        if (asteroidLife.getLife() <= 0) {
-                            world.removeEntity(asteroid);
-                        }
+                        asteroidLife.setDmgTaken(asteroidLife.getDmgTaken() + 1);
                     }
                     break;
                 }
@@ -58,12 +52,7 @@ public class CollisionControl implements IPostEntityProcService {
 
                         LifePart enemyLife = enemy.getPart(LifePart.class);
                         if (enemyLife != null) {
-                            int currentLife = enemyLife.getLife();
-                            enemyLife.setLife(currentLife - 1);
-
-                            if (enemyLife.getLife() <= 0) {
-                                world.removeEntity(enemy);
-                            }
+                            enemyLife.setDmgTaken(enemyLife.getDmgTaken() + 1);
                         }
                         break;
                     }
@@ -80,9 +69,7 @@ public class CollisionControl implements IPostEntityProcService {
 
                         LifePart playerLife = player.getPart(LifePart.class);
                         if (playerLife != null) {
-                            int currentLife = playerLife.getLife();
-                            playerLife.setLife(currentLife - 1);
-                            // No game over message - just take damage silently
+                            playerLife.setDmgTaken(playerLife.getDmgTaken() + 1);
                         }
                         break;
                     }
@@ -100,17 +87,12 @@ public class CollisionControl implements IPostEntityProcService {
                 if (isCollision(player, asteroid)) {
                     LifePart playerLife = player.getPart(LifePart.class);
                     if (playerLife != null) {
-                        int currentLife = playerLife.getLife();
-                        playerLife.setLife(currentLife - 1);
+                        playerLife.setDmgTaken(playerLife.getDmgTaken() + 1);
                     }
 
                     LifePart asteroidLife = asteroid.getPart(LifePart.class);
                     if (asteroidLife != null) {
-                        int currentLife = asteroidLife.getLife();
-                        asteroidLife.setLife(currentLife - 1);
-                        if (asteroidLife.getLife() <= 0) {
-                            world.removeEntity(asteroid);
-                        }
+                        asteroidLife.setDmgTaken(asteroidLife.getDmgTaken() + 1);
                     }
                 }
             }

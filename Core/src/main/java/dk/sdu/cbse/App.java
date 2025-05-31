@@ -86,10 +86,9 @@ public class App extends Application {
         // Track initial asteroid count
         previousAsteroidCount = world.getEntities(Asteroid.class).size();
 
+        // Create initial polygons for existing entities
         for (Entity entity : world.getEntities()) {
-            Polygon polygon = new Polygon(entity.getPolygonCoordinates());
-            polygons.put(entity, polygon);
-            gameWindow.getChildren().add(polygon);
+            createPolygonForEntity(entity);
         }
 
         render();
@@ -97,6 +96,15 @@ public class App extends Application {
         window.setScene(scene);
         window.setTitle("ASTEROIDS");
         window.show();
+    }
+
+    private void createPolygonForEntity(Entity entity) {
+        if (!polygons.containsKey(entity)) {
+            Polygon polygon = new Polygon(entity.getPolygonCoordinates());
+            polygons.put(entity, polygon);
+            gameWindow.getChildren().add(polygon);
+            System.out.println("Created polygon for entity: " + entity.getClass().getSimpleName());
+        }
     }
 
     private void render() {
@@ -116,18 +124,17 @@ public class App extends Application {
         // Track asteroid count before processing
         int asteroidsBefore = world.getEntities(Asteroid.class).size();
 
-        // Update
+        // Process all entities
         for (IEntityProcService entityProcessorService : getEntityProcessingServices()) {
             entityProcessorService.process(vgData, world);
         }
+
+        // Create polygons for any new entities that were added during processing
         for (Entity entity : world.getEntities()) {
-            if (polygons.get(entity) == null){
-                Polygon polygon = new Polygon(entity.getPolygonCoordinates());
-                polygons.put(entity, polygon);
-                gameWindow.getChildren().add(polygon);
-            }
+            createPolygonForEntity(entity);
         }
 
+        // Post-processing (like collision detection)
         for (IPostEntityProcService postEntityProcessorService : getPostEntityProcessingServices()) {
             postEntityProcessorService.process(vgData, world);
         }
@@ -143,23 +150,24 @@ public class App extends Application {
     }
 
     private void draw() {
+        // Remove polygons for entities that no longer exist
         for (Entity entityInPolygons : polygons.keySet()) {
-            if(!world.getEntities().contains(entityInPolygons)){
-                gameWindow.getChildren().remove(polygons.get(entityInPolygons));
+            if (!world.getEntities().contains(entityInPolygons)) {
+                Polygon polygon = polygons.get(entityInPolygons);
+                gameWindow.getChildren().remove(polygon);
                 polygons.remove(entityInPolygons);
+                System.out.println("Removed polygon for entity: " + entityInPolygons.getClass().getSimpleName());
             }
         }
 
+        // Update positions and rotations for all existing entities
         for (Entity entity : world.getEntities()) {
             Polygon polygon = polygons.get(entity);
-            if (polygon == null) {
-                polygon = new Polygon(entity.getPolygonCoordinates());
-                polygons.put(entity, polygon);
-                gameWindow.getChildren().add(polygon);
+            if (polygon != null) {
+                polygon.setTranslateX(entity.getX());
+                polygon.setTranslateY(entity.getY());
+                polygon.setRotate(entity.getRotation());
             }
-            polygon.setTranslateX(entity.getX());
-            polygon.setTranslateY(entity.getY());
-            polygon.setRotate(entity.getRotation());
         }
     }
 

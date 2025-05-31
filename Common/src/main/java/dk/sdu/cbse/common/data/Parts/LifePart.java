@@ -14,7 +14,6 @@ public class LifePart implements EntityPart {
         this.dmg = dmg;
     }
 
-
     public int getDmgTaken() {
         return dmgTaken;
     }
@@ -22,7 +21,6 @@ public class LifePart implements EntityPart {
     public void setDmgTaken(int dmgTaken) {
         this.dmgTaken = dmgTaken;
     }
-
 
     public int getDmg() {
         return dmg;
@@ -40,13 +38,12 @@ public class LifePart implements EntityPart {
         this.life = life;
     }
 
-
-
     @Override
     public void process(VisualGameData VGData, Entity entity) {
-        LifePart lifePart = (LifePart) entity.getPart(LifePart.class);
-        lifePart.setLife(lifePart.getLife() - lifePart.getDmgTaken());
-        lifePart.setDmgTaken(0);
+        // Apply accumulated damage
+        if (dmgTaken > 0) {
+            life = life - dmgTaken;
+            dmgTaken = 0; // Reset damage taken after applying it
+        }
     }
-
 }
