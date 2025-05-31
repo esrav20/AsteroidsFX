@@ -1,0 +1,10 @@
+dk\sdu\cbse\common\data\Entity.class
+dk\sdu\cbse\common\data\Parts\EntityPart.class
+dk\sdu\cbse\common\services\IEntityProcService.class
+dk\sdu\cbse\common\services\IPostEntityProcService.class
+dk\sdu\cbse\common\data\VisualGameData.class
+module-info.class
+dk\sdu\cbse\common\services\IGamePluginService.class
+dk\sdu\cbse\common\data\GameControls.class
+dk\sdu\cbse\common\data\Parts\LifePart.class
+dk\sdu\cbse\common\data\World.class

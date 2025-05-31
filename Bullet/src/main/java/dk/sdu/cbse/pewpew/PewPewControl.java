@@ -1,6 +1,5 @@
 package dk.sdu.cbse.pewpew;
 
-import dk.sdu.cbse.common.bullet.PewPew;
 import dk.sdu.cbse.common.data.Entity;
 import dk.sdu.cbse.common.data.Parts.LifePart;
 import dk.sdu.cbse.common.data.VisualGameData;
@@ -25,17 +24,23 @@ public class PewPewControl implements IEntityProcService {
                 continue;
             }
 
-            // Handle bullet lifetime - don't decrease life manually
-            // Let bullets live until they go off screen or hit something
+            // Check life BEFORE processing
+            LifePart lifePart = pewpew.getPart(LifePart.class);
+            if (lifePart != null) {
+                if (lifePart.getLife() <= 0) {
+                    world.removeEntity(pewpew);
+                }
+                lifePart.process(vgData, pewpew);  // Process AFTER checking
+            }
         }
     }
 
-    public PewPew createPewPew(Entity shooter, VisualGameData vgData) {
-        PewPew pewpew = new PewPew();
+    public Entity createPewPew(Entity shooter, VisualGameData vgData) {
+        Entity pewpew = new PewPew();
         pewpew.setPolygonCoordinates(3, -1, 3, 1, -3, 1, -3, -1);
         pewpew.setX(shooter.getX());
         pewpew.setY(shooter.getY());
-        pewpew.add(new LifePart(90, 1));
+        pewpew.add(new LifePart(1, 1)); // OLIVER'S PATTERN: 1 life, not 90
         pewpew.setRotation(shooter.getRotation());
 
         // Spawn bullet slightly ahead of shooter
