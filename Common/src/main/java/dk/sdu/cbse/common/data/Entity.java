@@ -1,8 +1,13 @@
 package dk.sdu.cbse.common.data;
 
+import dk.sdu.cbse.common.data.Parts.EntityPart;
+
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Entity implements Serializable {
     private final UUID ID = UUID.randomUUID();
@@ -11,23 +16,39 @@ public class Entity implements Serializable {
     private double x;
     private double y;
     private double rotation;
-    private int hitPoints;
+    private List<String> labels;
 
-    private int dmg;
 
+    private Map<Class, EntityPart> parts;
+
+    public void add(EntityPart part) {
+        parts.put(part.getClass(), part);
+    }
+
+    public void remove(Class partClass) {
+        parts.remove(partClass);
+    }
+
+    public <E extends EntityPart> E getPart(Class partClass) {
+        return (E) parts.get(partClass);
+    }
+
+    public Entity() {
+        parts = new ConcurrentHashMap<>();
+    }
 
 
     public String getID() {
         return ID.toString();
     }
 
-    public double getWidth(){
+    public double getWidth() {
         double[] coordinates = getPolygonCoordinates();
         Double max = Arrays.stream(coordinates).max().orElse(-1);
-        return max*2;
+        return max * 2;
     }
 
-    public void setPolygonCoordinates(double... coordinates ) {
+    public void setPolygonCoordinates(double... coordinates) {
         this.polygonCoordinates = coordinates;
     }
 
@@ -37,7 +58,7 @@ public class Entity implements Serializable {
 
 
     public void setX(double x) {
-        this.x =x;
+        this.x = x;
     }
 
     public double getX() {
@@ -60,26 +81,4 @@ public class Entity implements Serializable {
     public double getRotation() {
         return rotation;
     }
-
-
-    public void setHitPoints(int hitPoints) {
-        this.hitPoints = hitPoints;
-    }
-
-
-    public int getHitPoints() {
-        return hitPoints;
-    }
-
-
-    public void setDmg(int dmg) {
-        this.dmg = dmg;
-    }
-
-
-    public int getDmg() {
-        return dmg;
-    }
-
-
 }

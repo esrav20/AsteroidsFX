@@ -4,13 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa922a00-96d5-446c-bd81-d984402652b0" name="Changes" comment="All relevant Modules, poms, packages are created. &#10;&#10;Dependencies via JPMS work as intended - mvn clean install command builds the project correctly without failures.">
+    <list default="true" id="fa922a00-96d5-446c-bd81-d984402652b0" name="Changes" comment="compiles and installs through maven">
+      <change afterPath="$PROJECT_DIR$/nbactions.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Asteroid/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/Asteroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstControlSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstControlSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bullet/src/main/java/dk/sdu/cbse/pewpew/PewPewPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bullet/src/main/java/dk/sdu/cbse/pewpew/PewPewPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bullet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Bullet/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collision/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Collision/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonBullet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CommonBullet/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/Core-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/classes/dk/sdu/cbse/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Player/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mods-mvn/Core-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,19 +32,31 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="module-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Esrav20_SplitPackage" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "esrav20"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/esrav20/AsteroidsFX.git",
+    "accountId": "3794bc38-9091-41db-b099-68040ea5aaf3"
+  }
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -51,10 +74,20 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.App.executor": "Run",
     "JUnit.CollisionTest.isCollision.executor": "Debug",
     "Maven.asteroids.jpms [clean].executor": "Run",
+    "Maven.asteroidsfx [clean,install,-T,8].executor": "Run",
+    "Maven.asteroidsfx [clean,install,-X].executor": "Run",
     "Maven.asteroidsfx [clean,install].executor": "Run",
+    "Maven.asteroidsfx [clean].executor": "Run",
+    "Maven.asteroidsfx [exec:exec].executor": "Run",
+    "Maven.asteroidsfx [install].executor": "Run",
+    "Maven.asteroidsfx [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.asteroidsfx [org.apache.maven.plugins:maven-install-plugin:3.1.2:help].executor": "Run",
+    "Maven.asteroidsfx [org.apache.maven.plugins:maven-install-plugin:3.1.2:install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master2",
     "kotlin-language-version-configured": "true",
@@ -90,9 +123,25 @@
     <option name="myCommands">
       <command value="mvn clean" />
       <command value="mvn clean install" />
+      <command value="mvn clean install -T 8" />
+      <command value="mvn exec:exec" />
+      <command value="mvn clean install -X" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dk.sdu.cbse.App" />
+      <module name="Core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dk.sdu.cbse.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CollisionTest.isCollision" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Collision" />
       <extension name="coverage">
@@ -111,6 +160,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.CollisionTest.isCollision" />
         <item itemvalue="JUnit.CollisionTest.isCollision" />
         <item itemvalue="JUnit.CollisionTest.isCollision" />
       </list>
@@ -119,8 +170,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
       </set>
     </attachedChunks>
   </component>
@@ -141,6 +192,7 @@
       <workItem from="1747762694154" duration="1000" />
       <workItem from="1747921520214" duration="41000" />
       <workItem from="1748071721129" duration="3014000" />
+      <workItem from="1748680992816" duration="7526000" />
     </task>
     <task id="LOCAL-00001" summary="initial project setup">
       <option name="closed" value="true" />
@@ -182,7 +234,23 @@
       <option name="project" value="LOCAL" />
       <updated>1747921552043</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="uses modular LifePart contracts">
+      <option name="closed" value="true" />
+      <created>1748688224280</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1748688224280</updated>
+    </task>
+    <task id="LOCAL-00007" summary="compiles and installs through maven">
+      <option name="closed" value="true" />
+      <created>1748688792945</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1748688792945</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +260,8 @@
     <MESSAGE value="initial project setup" />
     <MESSAGE value="modules created with their poms" />
     <MESSAGE value="All relevant Modules, poms, packages are created. &#10;&#10;Dependencies via JPMS work as intended - mvn clean install command builds the project correctly without failures." />
-    <option name="LAST_COMMIT_MESSAGE" value="All relevant Modules, poms, packages are created. &#10;&#10;Dependencies via JPMS work as intended - mvn clean install command builds the project correctly without failures." />
+    <MESSAGE value="uses modular LifePart contracts" />
+    <MESSAGE value="compiles and installs through maven" />
+    <option name="LAST_COMMIT_MESSAGE" value="compiles and installs through maven" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 package dk.sdu.cbse.asteroid;
 
 import dk.sdu.cbse.common.data.Entity;
+import dk.sdu.cbse.common.data.Parts.LifePart;
 import dk.sdu.cbse.common.data.VisualGameData;
 import dk.sdu.cbse.common.data.World;
 import dk.sdu.cbse.common.services.IGamePluginService;
@@ -10,20 +11,22 @@ public class AstPlugin implements IGamePluginService {
     private Entity asteroid;
 
     @Override
-    public void start(VisualGameData VGdata, World world) {
-        asteroid = createSpaceRock(VGdata);
+    public void start(VisualGameData vgData, World world) {
+        asteroid = createAsteroid(vgData);
         world.addEntity(asteroid);
 
     }
-    private Entity createSpaceRock(VisualGameData VGdata) {
-        Entity spaceRock1 = new Entity();
-        spaceRock1.setPolygonCoordinates(20, 0, 14, 14, 0, 20, -14, 14, -20, 0, -14, -14, 0, -20, 14, -14);
-        spaceRock1.setX(VGdata.getDisplayW()/2);
-        spaceRock1.setY(0);
-        spaceRock1.setRotation(90);
-        spaceRock1.setHitPoints(10);
-        spaceRock1.setDmg(10);
-        return spaceRock1;
+    private Entity createAsteroid(VisualGameData vgData) {
+
+        Entity asteroid1 = new Asteroid();
+        asteroid1.setPolygonCoordinates(20, 0, 14, 14, 0, 20,
+                -14, 14, -20, 0, -14, -14, 0, -20, 14, -14);
+        asteroid1.setX(vgData.getDisplayW()/2);
+        asteroid1.setY(0);
+        asteroid1.setRotation(90);
+        asteroid1.add(new LifePart(10, 10));
+
+        return asteroid1;
     }
 
     @Override

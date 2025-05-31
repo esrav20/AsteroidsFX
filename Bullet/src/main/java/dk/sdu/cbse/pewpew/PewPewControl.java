@@ -1,6 +1,7 @@
 package dk.sdu.cbse.pewpew;
 
 import dk.sdu.cbse.common.data.Entity;
+import dk.sdu.cbse.common.data.Parts.LifePart;
 import dk.sdu.cbse.common.data.VisualGameData;
 import dk.sdu.cbse.common.data.World;
 import dk.sdu.cbse.common.services.IEntityProcService;
@@ -37,8 +38,7 @@ public class PewPewControl implements IEntityProcService {
         pewpew.setPolygonCoordinates(1, -1, 1, 1, -1, 1, -1, -1);
         pewpew.setX(shooter.getX());
         pewpew.setY(shooter.getY());
-        pewpew.setHitPoints(1);
-        pewpew.setDmg(1);
+        pewpew.add(new LifePart(1, 1));
         pewpew.setRotation(shooter.getRotation());
         double shiftX = Math.cos(Math.toRadians(shooter.getRotation()));
         double shiftY = Math.sin(Math.toRadians(shooter.getRotation()));

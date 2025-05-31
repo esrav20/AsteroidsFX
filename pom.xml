@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>dk.sdu.cbse</groupId>
-  <artifactId>asteroidsfx</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <artifactId>asteroidsfx</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
   <name>AsteroidsFX</name>
   <repositories>
   </repositories>
@@ -23,8 +23,8 @@
   <properties>
     <java>java</java>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencyManagement>
@@ -67,11 +67,22 @@
           <workingDirectory>.</workingDirectory>
           <longModulepath>false</longModulepath>
           <arguments>
+            <!--
+                                    On Mac Devices this line should not be commented out
+                                    <argument>-XstartOnFirstThread</argument>
+            -->
             <argument>-Dorg.lwjgl.util.Debug=true</argument>
             <argument>-Djava.library.path=libs</argument>
             <argument>--module-path=mods-mvn</argument>
             <argument>--class-path=libs/*</argument>
-            <argument>--module=Core/dk.sdu.cbse.main.Main</argument>
+            <!-- because spark.core is an automatic module and actually required,
+            monitor.observer.zero would be resolved as well and does not need
+            to be added explicitly;
+            I still wanted to do it for clarity, but for some reason that results
+            in "java.lang.module.FindException: Module monitor.observer.zero not found";
+            strange... -->
+            <!--                        <argument>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=127.0.0.1:8000</argument>                        &ndash;&gt;-->
+            <argument>--module=Core/dk.sdu.cbse.App.main</argument>
             <argument>--add-modules javafx.graphics</argument>
           </arguments>
         </configuration>
@@ -81,6 +92,7 @@
 
   <profiles>
     <profile>
+      <!-- parent project should delete 'mods-mvn' -->
       <id>parent-project</id>
       <activation>
         <file>
@@ -107,6 +119,7 @@
       </build>
     </profile>
     <profile>
+      <!-- child projects should copy artifact into 'mods-mvn' -->
       <id>child-project</id>
       <activation>
         <file>

@@ -22,7 +22,6 @@ public class GameControls {
         }
     }
 
-
     public boolean keyPressed(int key) {
         return controls[key] && !pcontrols[key];
     }
