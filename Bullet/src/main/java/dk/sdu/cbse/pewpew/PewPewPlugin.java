@@ -19,6 +19,10 @@ public class PewPewPlugin implements IGamePluginService, PewPewSPI {
 
     @Override
     public void stop(VisualGameData VGdata, World world) {
-
+        for (Entity e : world.getEntities(PewPew.class)) {
+            if (e.getClass() == PewPew.class) {
+                world.removeEntity(e);
+            }
+        }
     }
 }

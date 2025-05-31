@@ -7,12 +7,12 @@ import dk.sdu.cbse.common.services.IGamePluginService;
 
 public class AstPlugin implements IGamePluginService {
 
-    private Entity spaceRock;
+    private Entity asteroid;
 
     @Override
     public void start(VisualGameData VGdata, World world) {
-        spaceRock = createSpaceRock(VGdata);
-        world.addEntity(spaceRock);
+        asteroid = createSpaceRock(VGdata);
+        world.addEntity(asteroid);
 
     }
     private Entity createSpaceRock(VisualGameData VGdata) {
@@ -29,7 +29,7 @@ public class AstPlugin implements IGamePluginService {
     @Override
     public void stop(VisualGameData VGdata, World world) {
         for (Entity e : world.getEntities()) {
-            if (e.getClass() == App.class) {
+            if (e.getClass() == Asteroid.class) {
                 world.removeEntity(e);
             }
         }

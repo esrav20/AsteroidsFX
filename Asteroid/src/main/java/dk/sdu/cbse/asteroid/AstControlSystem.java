@@ -17,7 +17,7 @@ public class AstControlSystem implements IEntityProcService {
         // Chance to spawn 1
         int randomInt = random.nextInt(50);
 
-        for (Entity spaceRock : world.getEntities(App.class)) {
+        for (Entity spaceRock : world.getEntities(Asteroid.class)) {
             double changeX = Math.cos(Math.toRadians(spaceRock.getRotation()));
             double changeY = Math.sin(Math.toRadians(spaceRock.getRotation()));
             spaceRock.setX(spaceRock.getX() + changeX * 0.5);
@@ -56,7 +56,7 @@ public class AstControlSystem implements IEntityProcService {
 
         int randomInt = random.nextInt(vgData.getDisplayW())+1;
 
-        Entity spaceRock = new App();
+        Entity spaceRock = new Asteroid();
         spaceRock.setPolygonCoordinates(30, 0, 20, 20, 0, 30, -20, 20, -30, 0, -20, -20, 0, -30, 20, -20);
         spaceRock.setX(randomInt);
         spaceRock.setY(0);
@@ -69,7 +69,7 @@ public class AstControlSystem implements IEntityProcService {
 
     public void createMediumSpaceRock(Entity spaceRock, World world, int rotation){
         // Second spaceRock
-        Entity spaceRock1 = new App();
+        Entity spaceRock1 = new Asteroid();
         spaceRock1.setPolygonCoordinates(20, 0, 14, 14, 0, 20, -14, 14, -20, 0, -14, -14, 0, -20, 14, -14);
         spaceRock1.setX(spaceRock.getX());
         spaceRock1.setY(spaceRock.getY());
@@ -80,7 +80,7 @@ public class AstControlSystem implements IEntityProcService {
     }
 
     public void createSmallSpaceRock(Entity spaceRock, World world, int rotation){
-        Entity spaceRock2 = new App();
+        Entity spaceRock2 = new Asteroid();
         spaceRock2.setPolygonCoordinates(10, 0, 7, 7, 0, 10, -7, 7, -10, 0, -7, -7, 0, -10, 7, -7);
         spaceRock2.setX(spaceRock.getX());
         spaceRock2.setY(spaceRock.getY());

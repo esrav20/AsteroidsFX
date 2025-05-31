@@ -4,13 +4,13 @@ import dk.sdu.cbse.common.data.Entity;
 
 import java.util.Random;
 
-public class App extends Entity {
+public class Asteroid extends Entity {
 
     public Entity splitAs(Entity entity, int size) {
 
         Random rand = new Random();
 
-        Entity spaceRock = new App();
+        Entity spaceRock = new Asteroid();
         spaceRock.setX(entity.getX());
         spaceRock.setY(entity.getY());
         spaceRock.setRotation(entity.getRotation() + rand.nextInt(360));
