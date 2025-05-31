@@ -16,7 +16,7 @@ public class GoodGuyControl implements IEntityProcService {
     @Override
     public void process(VisualGameData vgData, World world) {
 
-        for (Entity goodguy : world.getEntities(App.class)) {
+        for (Entity goodguy : world.getEntities(GoodGuy.class)) {
             if (vgData.getControls().isDown(GameControls.LEFT)) {
                 goodguy.setRotation(goodguy.getRotation() - 5);
             }

@@ -9,6 +9,8 @@ public class GoodGuyPlugin implements IGamePluginService {
 
     private Entity goodguy;
 
+    public GoodGuyPlugin() {}
+
     @Override
     public void start(VisualGameData vgData, World world) {
 
@@ -21,8 +23,8 @@ public class GoodGuyPlugin implements IGamePluginService {
         goodguyV.setPolygonCoordinates(-5, -5, 10, 0, -5, 5);
         goodguyV.setX(vgData.getDisplayH()/2);
         goodguyV.setY(vgData.getDisplayH()/2);
-        goodguyV.setHitPoints(5);
-        goodguyV.setDmg(10);
+        //goodguyV.setHitPoints(5);
+        //goodguyV.setDmg(10);
         return goodguyV;
     }
 
