@@ -16,13 +16,11 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Polygon;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.Collection;
 import java.util.Map;
-import java.util.ServiceLoader;
 import java.util.concurrent.ConcurrentHashMap;
-
-import static java.util.stream.Collectors.toList;
 
 public class App extends Application {
     private final VisualGameData vgData = new VisualGameData();
@@ -31,24 +29,45 @@ public class App extends Application {
     private final Pane gameWindow = new Pane();
     private Text scoreText;
     private int destroyedAsteroids = 0;
-    private int previousAsteroidCount = 0;
 
-    // Public no-argument constructor (required for JavaFX Application)
-    public App() {
-        super();
-    }
-
-    public static void main(String[] args) {
-        launch(App.class, args);
-    }
+    // Spring services
+    private Collection<IGamePluginService> gamePlugins;
+    private Collection<IEntityProcService> entityServices;
+    private Collection<IPostEntityProcService> postEntityServices;
 
     @Override
     public void start(Stage window) throws Exception {
+        // Get Spring context and load services
+        ConfigurableApplicationContext context = AsteroidsFxApplication.getSpringContext();
+        gamePlugins = context.getBeansOfType(IGamePluginService.class).values();
+        entityServices = context.getBeansOfType(IEntityProcService.class).values();
+        postEntityServices = context.getBeansOfType(IPostEntityProcService.class).values();
+
         scoreText = new Text(10, 20, "Destroyed asteroids: 0");
         gameWindow.setPrefSize(vgData.getDisplayW(), vgData.getDisplayH());
         gameWindow.getChildren().add(scoreText);
 
         Scene scene = new Scene(gameWindow);
+        setupKeyHandlers(scene);
+
+        // Start all game plugins
+        for (IGamePluginService gamePlugin : gamePlugins) {
+            gamePlugin.start(vgData, world);
+        }
+
+        // Create initial polygons for existing entities
+        for (Entity entity : world.getEntities()) {
+            createPolygonForEntity(entity);
+        }
+
+        render();
+
+        window.setScene(scene);
+        window.setTitle("ASTEROIDS - Spring Framework");
+        window.show();
+    }
+
+    private void setupKeyHandlers(Scene scene) {
         scene.setOnKeyPressed(event -> {
             if (event.getCode().equals(KeyCode.LEFT)) {
                 vgData.getControls().setControl(GameControls.LEFT, true);
@@ -63,6 +82,7 @@ public class App extends Application {
                 vgData.getControls().setControl(GameControls.SPACE, true);
             }
         });
+
         scene.setOnKeyReleased(event -> {
             if (event.getCode().equals(KeyCode.LEFT)) {
                 vgData.getControls().setControl(GameControls.LEFT, false);
@@ -77,25 +97,6 @@ public class App extends Application {
                 vgData.getControls().setControl(GameControls.SPACE, false);
             }
         });
-
-        // Lookup all Game Plugins using ServiceLoader
-        for (IGamePluginService iGamePlugin : getPluginServices()) {
-            iGamePlugin.start(vgData, world);
-        }
-
-        // Track initial asteroid count
-        previousAsteroidCount = world.getEntities(Asteroid.class).size();
-
-        // Create initial polygons for existing entities
-        for (Entity entity : world.getEntities()) {
-            createPolygonForEntity(entity);
-        }
-
-        render();
-
-        window.setScene(scene);
-        window.setTitle("ASTEROIDS");
-        window.show();
     }
 
     private void createPolygonForEntity(Entity entity) {
@@ -103,14 +104,11 @@ public class App extends Application {
             Polygon polygon = new Polygon(entity.getPolygonCoordinates());
             polygons.put(entity, polygon);
             gameWindow.getChildren().add(polygon);
-            System.out.println("Created polygon for entity: " + entity.getClass().getSimpleName());
         }
     }
 
     private void render() {
         new AnimationTimer() {
-            private long then = 0;
-
             @Override
             public void handle(long now) {
                 update();
@@ -124,19 +122,19 @@ public class App extends Application {
         // Track asteroid count before processing
         int asteroidsBefore = world.getEntities(Asteroid.class).size();
 
-        // Process all entities
-        for (IEntityProcService entityProcessorService : getEntityProcessingServices()) {
-            entityProcessorService.process(vgData, world);
+        // Process all entities using Spring-managed services
+        for (IEntityProcService entityService : entityServices) {
+            entityService.process(vgData, world);
         }
 
-        // Create polygons for any new entities that were added during processing
+        // Create polygons for any new entities
         for (Entity entity : world.getEntities()) {
             createPolygonForEntity(entity);
         }
 
         // Post-processing (like collision detection)
-        for (IPostEntityProcService postEntityProcessorService : getPostEntityProcessingServices()) {
-            postEntityProcessorService.process(vgData, world);
+        for (IPostEntityProcService postEntityService : postEntityServices) {
+            postEntityService.process(vgData, world);
         }
 
         // Track asteroid count after processing
@@ -151,14 +149,14 @@ public class App extends Application {
 
     private void draw() {
         // Remove polygons for entities that no longer exist
-        for (Entity entityInPolygons : polygons.keySet()) {
-            if (!world.getEntities().contains(entityInPolygons)) {
-                Polygon polygon = polygons.get(entityInPolygons);
-                gameWindow.getChildren().remove(polygon);
-                polygons.remove(entityInPolygons);
-                System.out.println("Removed polygon for entity: " + entityInPolygons.getClass().getSimpleName());
+        polygons.entrySet().removeIf(entry -> {
+            Entity entity = entry.getKey();
+            if (!world.getEntities().contains(entity)) {
+                gameWindow.getChildren().remove(entry.getValue());
+                return true;
             }
-        }
+            return false;
+        });
 
         // Update positions and rotations for all existing entities
         for (Entity entity : world.getEntities()) {
@@ -169,17 +167,5 @@ public class App extends Application {
                 polygon.setRotate(entity.getRotation());
             }
         }
-    }
-
-    private Collection<? extends IGamePluginService> getPluginServices() {
-        return ServiceLoader.load(IGamePluginService.class).stream().map(ServiceLoader.Provider::get).collect(toList());
-    }
-
-    private Collection<? extends IEntityProcService> getEntityProcessingServices() {
-        return ServiceLoader.load(IEntityProcService.class).stream().map(ServiceLoader.Provider::get).collect(toList());
-    }
-
-    private Collection<? extends IPostEntityProcService> getPostEntityProcessingServices() {
-        return ServiceLoader.load(IPostEntityProcService.class).stream().map(ServiceLoader.Provider::get).collect(toList());
     }
 }

@@ -6,18 +6,18 @@ import dk.sdu.cbse.common.data.GameControls;
 import dk.sdu.cbse.common.data.VisualGameData;
 import dk.sdu.cbse.common.data.World;
 import dk.sdu.cbse.common.services.IEntityProcService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.ServiceLoader;
-
-import static java.util.stream.Collectors.toList;
-
+@Service
 public class GoodGuyControl implements IEntityProcService {
     private static int shootCooldown = 0;
 
+    @Autowired
+    private PewPewSPI pewPewSPI; // Spring will inject this automatically
+
     @Override
     public void process(VisualGameData vgData, World world) {
-        // Decrease shoot cooldown every frame
         if (shootCooldown > 0) {
             shootCooldown--;
         }
@@ -39,12 +39,10 @@ public class GoodGuyControl implements IEntityProcService {
                 goodguy.setY(goodguy.getY() + shiftY * 3);
             }
 
-            // Shooting
+            // Shooting - now uses injected service instead of ServiceLoader
             if (vgData.getControls().isDown(GameControls.SPACE) && shootCooldown <= 0) {
-                getPewPewSPI().stream().findFirst().ifPresent(pewSPI -> {
-                    Entity bullet = pewSPI.createPewPew(goodguy, vgData);
-                    world.addEntity(bullet);
-                });
+                Entity bullet = pewPewSPI.createPewPew(goodguy, vgData);
+                world.addEntity(bullet);
                 shootCooldown = 15;
             }
 
@@ -54,9 +52,5 @@ public class GoodGuyControl implements IEntityProcService {
             if (goodguy.getX() > vgData.getDisplayW()) goodguy.setX(vgData.getDisplayW() - 1);
             if (goodguy.getY() > vgData.getDisplayH()) goodguy.setY(vgData.getDisplayH() - 1);
         }
-    }
-
-    private Collection<? extends PewPewSPI> getPewPewSPI() {
-        return ServiceLoader.load(PewPewSPI.class).stream().map(ServiceLoader.Provider::get).collect(toList());
     }
 }
