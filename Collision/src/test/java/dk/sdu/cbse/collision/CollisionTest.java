@@ -9,53 +9,47 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
 class CollisionTest {
 
     @BeforeEach
     void setUp() {
     }
 
-
     @AfterEach
     void tearDown() {
     }
 
-
     @Test
     void isCollision() {
-        Entity spaceRock = new Entity();
+        Entity enemy = new Entity();
         Entity bullet = new Entity();
-        spaceRock.setPolygonCoordinates(20, 0, 14, 14, 0, 20, -14, 14, -20, 0, -14, -14, 0, -20, 14, -14);
-        bullet.setPolygonCoordinates(1, -1, 1, 1, -1, 1, -1, -1);
+        enemy.setPolygonCoordinates(-5, -5, 10, 0, -5, 5);
+        bullet.setPolygonCoordinates(3, -1, 3, 1, -3, 1, -3, -1);
 
-        spaceRock.setX(10);
-        spaceRock.setY(10);
-        bullet.setX(15);
-        bullet.setY(15);
+        enemy.setX(50);
+        enemy.setY(50);
+        bullet.setX(55);
+        bullet.setY(55);
 
         CollisionControl collisionControl = new CollisionControl();
 
-        assertTrue(collisionControl.isCollision(spaceRock, bullet));
+        assertTrue(collisionControl.isCollision(enemy, bullet));
     }
+
     @Test
     void isNotCollision() {
-
-        Entity spaceRock = new Entity();
+        Entity enemy = new Entity();
         Entity bullet = new Entity();
-        spaceRock.setPolygonCoordinates(20, 0, 14, 14, 0, 20, -14, 14, -20, 0, -14, -14, 0, -20, 14, -14);
-        bullet.setPolygonCoordinates(1, -1, 1, 1, -1, 1, -1, -1);
+        enemy.setPolygonCoordinates(-5, -5, 10, 0, -5, 5);
+        bullet.setPolygonCoordinates(3, -1, 3, 1, -3, 1, -3, -1);
 
-        spaceRock.setX(10);
-        spaceRock.setY(10);
-        bullet.setX(150);
-        bullet.setY(150);
+        enemy.setX(50);
+        enemy.setY(50);
+        bullet.setX(200);
+        bullet.setY(200);
 
         CollisionControl collisionControl = new CollisionControl();
 
-        assertFalse(collisionControl.isCollision(spaceRock, bullet));
+        assertFalse(collisionControl.isCollision(enemy, bullet));
     }
-
-
-
 }
