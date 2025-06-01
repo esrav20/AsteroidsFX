@@ -22,7 +22,7 @@ public class AsteroidsFxApplication {
         String[] allBeans = springContext.getBeanDefinitionNames();
         System.out.println("Total beans: " + allBeans.length);
 
-        // Look for our game-related beans
+        // Look for game-related beans
         for (String beanName : allBeans) {
             if (beanName.toLowerCase().contains("plugin") ||
                     beanName.toLowerCase().contains("control") ||

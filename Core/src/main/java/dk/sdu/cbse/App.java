@@ -72,7 +72,7 @@ public class App extends Application {
         render();
 
         window.setScene(scene);
-        window.setTitle("ASTEROIDS - Pure Spring Framework");
+        window.setTitle("ASTEROIDS - Spring Framework");
         window.show();
     }
 

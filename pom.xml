@@ -74,35 +74,26 @@
         </configuration>
       </plugin>
 
-      <!-- Spring Boot Plugin - Clean configuration -->
+      <!-- Spring Boot Plugin -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <inherited>false</inherited>
         <configuration>
           <mainClass>${main.class}</mainClass>
-          <!-- Point to the Core module's target directory -->
           <classesDirectory>Core/target/classes</classesDirectory>
         </configuration>
       </plugin>
 
-      <!-- Exec Plugin - Based on your co-student's working example -->
+      <!-- Exec Plugin -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.1.0</version>
         <inherited>false</inherited>
-        <executions>
-          <execution>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-          </execution>
-        </executions>
         <configuration>
           <executable>java</executable>
           <workingDirectory>.</workingDirectory>
-          <!-- Simple argument list without forbidden commandlineArgs -->
           <arguments>
             <argument>-cp</argument>
             <argument>Core/target/classes:Core/target/dependency/*</argument>
@@ -112,31 +103,4 @@
       </plugin>
     </plugins>
   </build>
-
-  <profiles>
-    <!-- Profile for parent project cleanup -->
-    <profile>
-      <id>parent-project</id>
-      <activation>
-        <file>
-          <missing>src</missing>
-        </file>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-clean-plugin</artifactId>
-            <version>3.2.0</version>
-            <configuration>
-              <filesets>
-                <fileset>
-                  <directory>target</directory>
-                </fileset>
-              </filesets>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 </project>

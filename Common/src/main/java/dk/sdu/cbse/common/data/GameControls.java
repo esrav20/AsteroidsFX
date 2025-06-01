@@ -1,10 +1,8 @@
 package dk.sdu.cbse.common.data;
 
 public class GameControls {
-
     private static boolean[] controls;
     private static boolean[] pcontrols;
-
     private static final int NUM_KEY = 4;
     public static final int UP = 0;
     public static final int LEFT = 1;
@@ -29,6 +27,7 @@ public class GameControls {
     public void setControl(int key, boolean value) {
         controls[key] = value;
     }
+
     public boolean isDown(int key) {
         return controls[key];
     }
