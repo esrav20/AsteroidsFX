@@ -11,6 +11,7 @@
         <module name="Asteroid" />
         <module name="Collision" />
         <module name="Enemy" />
+        <module name="ScoreService" />
         <module name="CommonBullet" />
         <module name="Core" />
         <module name="Common" />
@@ -27,6 +28,7 @@
       <module name="Core" options="-parameters" />
       <module name="Enemy" options="-parameters" />
       <module name="Player" options="-parameters" />
+      <module name="ScoreService" options="-parameters" />
       <module name="asteroidsfx" options="-parameters" />
     </option>
   </component>

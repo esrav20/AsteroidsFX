@@ -5,12 +5,18 @@ import dk.sdu.cbse.common.data.Parts.LifePart;
 import dk.sdu.cbse.common.data.VisualGameData;
 import dk.sdu.cbse.common.data.World;
 import dk.sdu.cbse.common.services.IEntityProcService;
+import dk.sdu.cbse.common.score.ScoreServiceClient;
+import dk.sdu.cbse.common.score.ScoreServiceClient.ScoreData;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
 @Service
 public class AstControlSystem implements IEntityProcService {
+
+    @Autowired(required = false) // Make it optional in case scoring service is not available
+    private ScoreServiceClient scoreServiceClient;
 
     @Override
     public void process(VisualGameData vgData, World world) {
@@ -52,18 +58,21 @@ public class AstControlSystem implements IEntityProcService {
 
                 // Large asteroid splits when destroyed
                 if (isLargeAsteroid && currentLife <= 0) {
+                    handleAsteroidDestruction("large", vgData);
                     createMediumAsteroid(asteroid, world, -45);
                     createMediumAsteroid(asteroid, world, 45);
                     world.removeEntity(asteroid);
                 }
                 // Medium asteroid splits when destroyed
                 else if (isMediumAsteroid && currentLife <= 0) {
+                    handleAsteroidDestruction("medium", vgData);
                     createSmallAsteroid(asteroid, world, -60);
                     createSmallAsteroid(asteroid, world, 60);
                     world.removeEntity(asteroid);
                 }
                 // Small asteroid just disappears
                 else if (isSmallAsteroid && currentLife <= 0) {
+                    handleAsteroidDestruction("small", vgData);
                     world.removeEntity(asteroid);
                 }
             }
@@ -76,6 +85,24 @@ public class AstControlSystem implements IEntityProcService {
         if (randomInt == 1) {
             createAsteroid(vgData, world);
         }
+    }
+
+    private void handleAsteroidDestruction(String size, VisualGameData vgData) {
+        if (scoreServiceClient != null) {
+            try {
+                ScoreData scoreData = scoreServiceClient.addScore(size);
+                updateScoreDisplay(scoreData, vgData);
+            } catch (Exception e) {
+                System.err.println("Error updating score for " + size + " asteroid: " + e.getMessage());
+            }
+        }
+    }
+
+    private void updateScoreDisplay(ScoreData scoreData, VisualGameData vgData) {
+        // This would need to be implemented based on how you want to display scores
+        // For now, we'll just print to console
+        System.out.println("Score Update: " + scoreData.getDisplayString() +
+                " (+" + scoreData.getPointsAwarded() + " points)");
     }
 
     public void createAsteroid(VisualGameData vgData, World world) {

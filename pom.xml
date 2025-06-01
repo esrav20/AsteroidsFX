@@ -24,6 +24,7 @@
     <module>Bullet</module>
     <module>Collision</module>
     <module>Core</module>
+    <module>ScoreService</module>
   </modules>
 
   <properties>
