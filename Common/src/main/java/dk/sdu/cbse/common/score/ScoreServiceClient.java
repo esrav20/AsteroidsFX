@@ -1,5 +1,6 @@
 package dk.sdu.cbse.common.score;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.client.ResourceAccessException;
@@ -10,9 +11,10 @@ public class ScoreServiceClient {
     private final RestTemplate restTemplate;
     private final String scoreServiceUrl;
 
-    public ScoreServiceClient() {
-        this.restTemplate = new RestTemplate();
-        this.scoreServiceUrl = "http://localhost:8080/api/score";
+    @Autowired
+    public ScoreServiceClient(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+        this.scoreServiceUrl = "http://localhost:8081/api/score";
     }
 
     public ScoreData addScore(String asteroidSize) {

@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa922a00-96d5-446c-bd81-d984402652b0" name="Changes" comment="Initial Scoring System branch commit">
-      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/score/ScoreServiceClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ScoreService/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ScoreService/src/main/java/dk/sdu/cbse/scoreservice/ScoreServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ScoreService/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="fa922a00-96d5-446c-bd81-d984402652b0" name="Changes" comment="Integrate Asteroid scoring system with Spring Boot microservice.">
+      <change afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/config/RestTemplateConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstControlSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/src/main/java/dk/sdu/cbse/asteroid/AstControlSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Asteroid/target/classes/dk/sdu/cbse/asteroid/AstControlSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/target/classes/dk/sdu/cbse/asteroid/AstControlSystem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScoreService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ScoreService/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,51 +65,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.App.executor": "Run",
-    "JUnit.CollisionTest.isCollision.executor": "Debug",
-    "Maven.Common [install].executor": "Run",
-    "Maven.Common [org.apache.maven.plugins:maven-install-plugin:3.1.2:install].executor": "Run",
-    "Maven.CommonBullet [install].executor": "Run",
-    "Maven.Core [exec:java].executor": "Run",
-    "Maven.Core [javafx:run].executor": "Run",
-    "Maven.asteroids.jpms [clean].executor": "Run",
-    "Maven.asteroidsfx [-e,exec:exec].executor": "Run",
-    "Maven.asteroidsfx [clean,compile].executor": "Run",
-    "Maven.asteroidsfx [clean,install,-T,8].executor": "Run",
-    "Maven.asteroidsfx [clean,install,-X].executor": "Run",
-    "Maven.asteroidsfx [clean,install].executor": "Run",
-    "Maven.asteroidsfx [clean].executor": "Run",
-    "Maven.asteroidsfx [compile].executor": "Run",
-    "Maven.asteroidsfx [dependency:tree,|,grep...].executor": "Run",
-    "Maven.asteroidsfx [exec:exec].executor": "Run",
-    "Maven.asteroidsfx [exec:java].executor": "Run",
-    "Maven.asteroidsfx [install].executor": "Run",
-    "Maven.asteroidsfx [javafx:run].executor": "Run",
-    "Maven.asteroidsfx [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
-    "Maven.asteroidsfx [org.apache.maven.plugins:maven-install-plugin:3.1.2:help].executor": "Run",
-    "Maven.asteroidsfx [org.apache.maven.plugins:maven-install-plugin:3.1.2:install].executor": "Run",
-    "Maven.asteroidsfx [spring-boot:run,-pl,Core].executor": "Run",
-    "Maven.asteroidsfx [spring-boot:run].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "ScoringSystem",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/esben/IdeaProjects/AsteroidsFX/Player",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.43606254",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CollisionTest.isCollision.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.Common [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Common [org.apache.maven.plugins:maven-install-plugin:3.1.2:install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CommonBullet [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Core [exec:java].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Core [javafx:run].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ScoreService [spring-boot:run].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroids.jpms [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [-e,exec:exec].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [clean,compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [clean,install,-T,8].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [clean,install,-X].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [dependency:tree,|,grep...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [exec:exec].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [exec:java].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [javafx:run].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [org.apache.maven.plugins:maven-install-plugin:3.1.2:help].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [org.apache.maven.plugins:maven-install-plugin:3.1.2:install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [spring-boot:run,-pl,Core].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.asteroidsfx [spring-boot:run].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ScoringSystem&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/esben/IdeaProjects/AsteroidsFX/Player&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.43606254&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="dk.sdu.cbse.common.data" />
@@ -142,14 +133,14 @@
       <command value="mvn exec:java" />
       <command value="mvn -e exec:exec" />
       <command value="mvn clean install" />
-      <command value="mvn exec:exec" />
       <command value="mvn clean" />
       <command value="mvn compile" />
-      <command value="mvn spring-boot:run" />
       <command value="mvn dependency:tree | grep spring" />
       <command value="mvn clean compile" />
       <command value="mvn clean install -T 8" />
+      <command value="mvn spring-boot:run" />
       <command value="mvn spring-boot:run -pl Core" />
+      <command value="mvn exec:exec" />
     </option>
   </component>
   <component name="RunManager" selected="Application.App">
@@ -232,7 +223,8 @@
       <workItem from="1748071721129" duration="3014000" />
       <workItem from="1748680992816" duration="7526000" />
       <workItem from="1748718866861" duration="4360000" />
-      <workItem from="1748760726614" duration="3485000" />
+      <workItem from="1748760726614" duration="3649000" />
+      <workItem from="1748775727615" duration="1260000" />
     </task>
     <task id="LOCAL-00001" summary="initial project setup">
       <option name="closed" value="true" />
@@ -354,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748762601803</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Integrate Asteroid scoring system with Spring Boot microservice.">
+      <option name="closed" value="true" />
+      <created>1748764442440</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1748764442440</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +374,8 @@
     <MESSAGE value="Spring Annotations" />
     <MESSAGE value="Code cleanup: streamlined comments, removed redundant blank lines, and condensed getter/setter methods across multiple files. Adjusted project XML files for Spring Compatibility" />
     <MESSAGE value="Initial Scoring System branch commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Scoring System branch commit" />
+    <MESSAGE value="Scoring Service added.&#10;" />
+    <MESSAGE value="Integrate Asteroid scoring system with Spring Boot microservice." />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrate Asteroid scoring system with Spring Boot microservice." />
   </component>
 </project>

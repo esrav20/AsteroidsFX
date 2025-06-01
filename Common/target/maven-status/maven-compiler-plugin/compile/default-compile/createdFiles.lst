@@ -10,4 +10,5 @@ dk\sdu\cbse\common\score\ScoreServiceClient$ScoreRequest.class
 dk\sdu\cbse\common\score\ScoreServiceClient$ScoreResponse.class
 dk\sdu\cbse\common\services\IGamePluginService.class
 dk\sdu\cbse\common\score\ScoreServiceClient$ScoreData.class
+dk\sdu\cbse\common\config\RestTemplateConfig.class
 dk\sdu\cbse\common\data\Parts\LifePart.class
