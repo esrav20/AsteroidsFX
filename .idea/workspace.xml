@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa922a00-96d5-446c-bd81-d984402652b0" name="Changes" comment="Spring Annotations">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Asteroid/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bullet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Bullet/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Collision/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Collision/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/GameControls.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/GameControls.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/Parts/EntityPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/Parts/EntityPart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/Parts/LifePart.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/Parts/LifePart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/VisualGameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/dk/sdu/cbse/common/data/VisualGameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/dk/sdu/cbse/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/dk/sdu/cbse/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/dk/sdu/cbse/AsteroidsFxApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/dk/sdu/cbse/AsteroidsFxApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enemy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Player/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fa922a00-96d5-446c-bd81-d984402652b0" name="Changes" comment="Code cleanup: streamlined comments, removed redundant blank lines, and condensed getter/setter methods across multiple files. Adjusted project XML files for Spring Compatibility" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,7 +210,7 @@
       <workItem from="1748071721129" duration="3014000" />
       <workItem from="1748680992816" duration="7526000" />
       <workItem from="1748718866861" duration="4360000" />
-      <workItem from="1748760726614" duration="1054000" />
+      <workItem from="1748760726614" duration="1805000" />
     </task>
     <task id="LOCAL-00001" summary="initial project setup">
       <option name="closed" value="true" />
@@ -333,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748723230215</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Code cleanup: streamlined comments, removed redundant blank lines, and condensed getter/setter methods across multiple files. Adjusted project XML files for Spring Compatibility">
+      <option name="closed" value="true" />
+      <created>1748761929691</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1748761929691</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +342,7 @@
     <MESSAGE value="JPMS Asteroids.&#10;Finished." />
     <MESSAGE value="initial Spring commit" />
     <MESSAGE value="Spring Annotations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spring Annotations" />
+    <MESSAGE value="Code cleanup: streamlined comments, removed redundant blank lines, and condensed getter/setter methods across multiple files. Adjusted project XML files for Spring Compatibility" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code cleanup: streamlined comments, removed redundant blank lines, and condensed getter/setter methods across multiple files. Adjusted project XML files for Spring Compatibility" />
   </component>
 </project>
