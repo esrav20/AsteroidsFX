@@ -16,5 +16,8 @@
         <module name="Common" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ScoreService" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>
